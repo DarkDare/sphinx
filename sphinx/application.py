@@ -42,7 +42,7 @@ from sphinx.util import import_object
 from sphinx.util.tags import Tags
 from sphinx.util.osutil import ENOENT
 from sphinx.util.logging import is_suppressed_warning
-from sphinx.util.console import bold, lightgray, darkgray, yellow, darkgreen, \
+from sphinx.util.console import bold, lightgray, darkgray, darkred, darkgreen, \
     term_width_line
 from sphinx.util.i18n import find_catalog_source_files
 
@@ -327,7 +327,7 @@ class Sphinx(object):
         self.messagelog.append(message)
 
     def warn(self, message, location=None, prefix='WARNING: ',
-             type=None, subtype=None, colorfunc=yellow):
+             type=None, subtype=None, colorfunc=darkred):
         """Emit a warning.
 
         If *location* is given, it should either be a tuple of (docname, lineno)
